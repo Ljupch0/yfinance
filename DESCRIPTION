@@ -15,4 +15,7 @@ Imports:
     tidyr,
     dplyr,
     rvest,
-    stringr
+    stringr,
+    purrr,
+    readr,
+    xml2

@@ -1,7 +1,8 @@
 #' Get Income Statement
 #'
-#' @param ticker The stock ticker of the company.
-#' @param format Choose between "raw", "clean" and "tidy" format. "raw" returns the income statement as you see it on yahoo finance, and is the easiest to read. "clean" keep the same format, but removes empty grouping rows, manges missing data and converts numbers to numeric format. "tidy" makes every item a varaible and every yearly report an observation, so the tidyverse can be easily used. Default is "tidy".
+#' @param ticker The stock ticker of the company as a string.
+#' @param format Choose between "raw", "clean" and "tidy" format. "raw" returns the income statement as you see it on yahoo finance, and is the easiest to read. "clean" keeps the same format, but removes empty grouping rows, converts missing data to NA and numbers to numeric. "tidy" makes every item a varaible and every yearly report an observation, so that tidyverse packages can be easily used on the data. Default is "tidy".
+#' @param assign Choose between TRUE or FALSE. If TRUE, function output dataframe is assigned as "ticker_income" to the environment. If FALSE, the function will only return the dataframe and it's up to the user to save it under a name. Default is TRUE.
 #'
 #' @return A dataframe with income statement data from the last 4 yearly reports.
 #' @export
@@ -10,6 +11,7 @@
 #' @import dplyr
 #' @import stringr
 #' @import rvest
+#' @importFrom readr parse_number
 #'
 #' @examples
 #' getIncome("AAPL")
@@ -28,10 +30,10 @@ getIncome <- function (ticker, format = "tidy", assign = TRUE) {
         nodes <- page %>% rvest::html_nodes(".fi-row")
 
         for(i in nodes){
-          r <- list(i %>% rvest::html_nodes("[title],[data-test='fin-col']")%>%html_text())
+          r <- list(i %>% rvest::html_nodes("[title],[data-test='fin-col']") %>% rvest::html_text())
           df <- rbind(df, as.data.frame(matrix(r[[1]], ncol = length(r[[1]]), byrow = TRUE), stringsAsFactors = FALSE))
         }
-        matches <- stringr::str_match_all(page%>%html_node('#Col1-3-Financials-Proxy')%>%html_text(),'\\d{1,2}/\\d{1,2}/\\d{4}')
+        matches <- stringr::str_match_all(page %>% rvest::html_node('#Col1-3-Financials-Proxy') %>% rvest::html_text(),'\\d{1,2}/\\d{1,2}/\\d{4}')
         headers <- c('Items','TTM', matches[[1]][,1])
         names(df) <- headers
         assign("df", df, pos = parent.frame())

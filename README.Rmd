@@ -22,10 +22,10 @@ The equityanalysis package simplifies the download and analysis of financial sta
 
 ## Installation
 
-You can install the released version of equityanalysis from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of equityanalysis from [Github](https://github.com/Ljupch0/equityanalysis) with:
 
 ``` r
-install.packages("equityanalysis")
+devtools::install_github("equityanalysis")
 ```
 
 ## Example

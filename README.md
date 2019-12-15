@@ -13,10 +13,10 @@ financial statement data.
 ## Installation
 
 You can install the released version of equityanalysis from
-[CRAN](https://CRAN.R-project.org) with:
+[Github](https://github.com/Ljupch0/equityanalysis) with:
 
 ``` r
-install.packages("equityanalysis")
+devtools::install_github("equityanalysis")
 ```
 
 ## Example
