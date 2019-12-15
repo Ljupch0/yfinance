@@ -1,0 +1,11 @@
+Package: equityanalysis
+Type: Package
+Title: Downloads Financial Statement Data in Tidy Format
+Version: 0.1.0
+Author: Ljupcho Naumov <lj.naumov@gmail.com>
+Maintainer: Ljupcho Naumov <lj.naumov@gmail.com>
+Description: The equityanalysis package simplifies the download and analysis of financial statement data.    Given a stock ticker, the functions getIncome, getBalanceSheet, getCashFlow and getFinancials download financial statements from yahoo finance, and offer three data formats. The raw format presents the document in the standard format and is the easiest to read as a financial analyst. The clean format keeps the structure of raw, but cleans up empty rows and missing data, and converts the data type to numeric when applicable. Finally the "tidy" format pivots the data so that every item in the financial statement is a variable and every yearly report is an observation. In "tidy" format it is easy to use the wider tidyverse to analyse and plot the data, however it is harder to read the data as a financial analyst normally would.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
