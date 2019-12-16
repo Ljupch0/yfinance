@@ -31,17 +31,17 @@ The resulting dataframes are available in 3 formats. The “raw” format
 presents the data as it would be usually be seen as a table in a
 financial report, and thus is best for readability. The “clean” format
 keeps that readable structure, but removes empty grouping rows, and
-converts missing data to NA and numbers to numeric. Finally, format =
-“tidy” pivots the data so that every statement item is a variable, and
+converts missing data to NA and numbers to numeric. Finally, `format =
+"tidy"` pivots the data so that every statement item is a variable, and
 every report is an observation, and also shortens the variable names for
 ease of use. Most importantly, “tidy” format makes the data ready to be
 analyzed and plotted with the tidyverse and beyond, and as such is the
 defaut format.
 
 The resulting dataframes are by default assigned to the envirnoment with
-succint object names (assign = TRUE). However, by setting assign=FALSE
-the user is free to have only the results returned and assigned to the
-environment with a name of their choice.
+succint object names (`assign = TRUE`). However, by setting `assign =
+FALSE` the user is free to have only the results returned and assigned
+to the environment with a name of their choice.
 
 **getFinancials** is the most general function, which can take a vector
 of tickers and returns a tidy dataframe containing all the income
@@ -67,7 +67,7 @@ library(ggplot2)
 ```
 
 To get an income statement that can be read through like a table, use
-**getIncome** with format=“raw”.
+**getIncome** with `format = "raw"`.
 
 ``` r
 getIncome(ticker="AAPL", format = "raw", assign = FALSE)
@@ -120,9 +120,9 @@ getIncome(ticker="AAPL", format = "raw", assign = FALSE)
 ```
 
 However to get a report that is easier to work with in R, we can use the
-format=“tidy” and assing=TRUE defaults and just provide the company
-ticker. In the resulting dataframe we can filter a for a single yearly
-report and calculate the EBITDA margin, for instance.
+`format = "tidy"` and `assign = TRUE` defaults and just provide the
+company ticker. In the resulting dataframe we can filter a for a single
+yearly report and calculate the EBITDA margin, for instance.
 
 ``` r
 getIncome("AAPL")
