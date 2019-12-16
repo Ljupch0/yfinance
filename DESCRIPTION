@@ -1,6 +1,6 @@
 Package: equityanalysis
 Type: Package
-Title: Downloads Financial Statement Data in Tidy Format
+Title: R Package for Downloading Financial Statements in Tidy Format
 Version: 0.1.0
 Author: Ljupcho Naumov
 Maintainer: Ljupcho Naumov <lj.naumov@gmail.com>

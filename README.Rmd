@@ -80,6 +80,7 @@ profit_margins <- financials %>%
     cash_flow_margin = operating_cf / revenue
   )
 
+
 ggplot(data = profit_margins)+
   geom_bar(mapping = aes(x = year, y=ebit_margin, fill=reorder(ticker, ebit_margin)),
              stat="identity",
@@ -88,7 +89,7 @@ ggplot(data = profit_margins)+
               position = position_dodge(width = 0.9),
               vjust = -0.3)+
   scale_fill_manual("legend", values = c("FB" = "#3b5b9a", "AMZN" = "#ff9900", "GOOG" = "#4285F4", "AAPL" = "#e5e5e5"))+
-  labs(title = "EBIT Margins for FAAG Stocks", fill="Stock", x ="Year")+
+  labs(title = "EBIT Margins for FAAG Stocks", x ="Year")+
   theme(
     axis.title.y=element_blank(),
     axis.text.y=element_blank(),
