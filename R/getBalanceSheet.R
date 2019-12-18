@@ -3,7 +3,7 @@
 #' Returns historical data from balance sheets.
 #'
 #' @param ticker The stock ticker of the company as a string.
-#' @param format Choose between "raw", "clean" and "tidy" format. "raw" returns the income statement as you see it on yahoo finance, and is the easiest to read. "clean" keeps the same format, but removes empty grouping rows, converts missing data to NA and numbers to numeric. "tidy" makes every item a varaible and every yearly report an observation, so that tidyverse packages can be easily used on the data. Default is "tidy".
+#' @param format Choose between "raw", "clean" and "tidy" format. The "raw" format returns the balance sheet as you see it on yahoo finance, and is the easiest to read. "clean" keeps the same format, but removes empty grouping rows, and converts missing data to NA and numbers to numeric. "tidy" makes every item a varaible and every yearly report an observation, so that tidyverse packages can be easily used on the data. Default is "tidy".
 #' @param assign Choose between TRUE or FALSE. If TRUE, function output dataframe is assigned as "ticker_bs" to the environment. If FALSE, the function will only return the dataframe and it's up to the user to save it under a name. Default is TRUE.
 #'
 #' @return A dataframe with balance sheet data from the last 4 yearly reports.
