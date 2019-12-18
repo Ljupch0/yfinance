@@ -15,7 +15,7 @@ getFinancials(ticker, assign = TRUE)
 A dataframe with all financial data from the last 4 yearly reports.
 }
 \description{
-Get Financial Statements
+Returns a single tidy dataframe with historical data from the income statement, balance sheet, and cash flow statement.
 }
 \examples{
 getFinancials("AAPL")

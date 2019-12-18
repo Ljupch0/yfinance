@@ -17,7 +17,7 @@ getCashFlow(ticker, format = "tidy", assign = TRUE)
 A dataframe with cash flow data from the last 4 yearly reports.
 }
 \description{
-Get Cash Flow Statement
+Returns historical data from cash flow statements.
 }
 \examples{
 getCashFlow("AAPL")

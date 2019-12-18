@@ -17,7 +17,7 @@ getBalanceSheet(ticker, format = "tidy", assign = TRUE)
 A dataframe with balance sheet data from the last 4 yearly reports.
 }
 \description{
-Get Balance Sheet
+Returns historical data from balance sheets.
 }
 \examples{
 getBalanceSheet("AAPL")

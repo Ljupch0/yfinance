@@ -17,7 +17,7 @@ getIncome(ticker, format = "tidy", assign = TRUE)
 A dataframe with income statement data from the last 4 yearly reports.
 }
 \description{
-Get Income Statement
+Returns historical data from income statements.
 }
 \examples{
 getIncome("AAPL")

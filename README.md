@@ -28,20 +28,20 @@ scrape the respective financial statements for a single stock ticker.
 vector of stock tickers.
 
 The resulting dataframes are available in 3 formats. The “raw” format
-presents the data as it would be usually be seen as a table in a
-financial report, and thus is best for readability. The “clean” format
-keeps that readable structure, but removes empty grouping rows, and
-converts missing data to NA and numbers to numeric. Finally, `format =
-"tidy"` pivots the data so that every statement item is a variable, and
-every report is an observation, and also shortens the variable names for
-ease of use. Most importantly, “tidy” format makes the data ready to be
+presents the data as it usually would be seen as a table in a financial
+report, and thus is best for readability. The “clean” format keeps that
+readable structure, but removes empty grouping rows, and converts
+missing data to NA and numbers to numeric. Finally, `format = "tidy"`
+pivots the data so that every statement item is a variable, and every
+report is an observation, and also shortens the variable names for ease
+of use. Most importantly, “tidy” format makes the data ready to be
 analyzed and plotted with the tidyverse and beyond, and as such is the
 defaut format.
 
 The resulting dataframes are by default assigned to the envirnoment with
-succint object names (`assign = TRUE`). However, by setting `assign =
-FALSE` the user is free to have only the results returned and assigned
-to the environment with a name of their choice.
+succint object names. However, by setting `assign = FALSE` the user is
+free to have only the results returned and assigned to the environment
+with a name of their choice.
 
 **getFinancials** is the most general function, which can take a vector
 of tickers and returns a tidy dataframe containing all the income
@@ -55,14 +55,6 @@ Libraries needed for these examples
 ``` r
 library(equityanalysis)
 library(dplyr)
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
 library(ggplot2)
 ```
 
@@ -130,7 +122,7 @@ getIncome("AAPL")
 #> [1] "AAPL" "AAPL" "AAPL" "AAPL" "AAPL"
 
 aapl_income %>% 
-  filter(year == "2019") %>% 
+  dplyr::filter(year == "2019") %>% 
   transmute(
     ebitda_margin = ebitda / revenue
   )
@@ -162,6 +154,7 @@ profit_margins <- financials %>%
     cash_flow_margin = operating_cf / revenue
   )
 
+
 ggplot(data = profit_margins)+
   geom_bar(mapping = aes(x = year, y=ebit_margin, fill=reorder(ticker, ebit_margin)),
              stat="identity",
@@ -170,7 +163,7 @@ ggplot(data = profit_margins)+
               position = position_dodge(width = 0.9),
               vjust = -0.3)+
   scale_fill_manual("legend", values = c("FB" = "#3b5b9a", "AMZN" = "#ff9900", "GOOG" = "#4285F4", "AAPL" = "#e5e5e5"))+
-  labs(title = "EBIT Margins for FAAG Stocks", fill="Stock", x ="Year")+
+  labs(title = "EBIT Margins for FAAG Stocks", x ="Year")+
   theme(
     axis.title.y=element_blank(),
     axis.text.y=element_blank(),
