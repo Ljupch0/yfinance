@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![Travis build
+status](https://travis-ci.org/Ljupch0/equityanalysis.svg?branch=master)](https://travis-ci.org/Ljupch0/equityanalysis)
 <!-- badges: end -->
 
 The equityanalysis package simplifies the download and analysis of

@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # equityanalysis
 
 <!-- badges: start -->
+[![Travis build status](https://travis-ci.org/Ljupch0/equityanalysis.svg?branch=master)](https://travis-ci.org/Ljupch0/equityanalysis)
 <!-- badges: end -->
 
 The equityanalysis package simplifies the download and analysis of financial statement data. The data source is yahoo finance.
