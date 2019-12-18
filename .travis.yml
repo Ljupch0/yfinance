@@ -5,10 +5,13 @@ cache: packages
 warnings_are_errors: true
 
 os:
-  - linux
   - osx
 
 r:
   - oldrel
   - release
-  - devel
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change

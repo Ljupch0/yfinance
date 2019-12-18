@@ -9,7 +9,7 @@ getIncome(ticker, format = "tidy", assign = TRUE)
 \arguments{
 \item{ticker}{The stock ticker of the company as a string.}
 
-\item{format}{Choose between "raw", "clean" and "tidy" format. "raw" returns the income statement as you see it on yahoo finance, and is the easiest to read. "clean" keeps the same format, but removes empty grouping rows, converts missing data to NA and numbers to numeric. "tidy" makes every item a varaible and every yearly report an observation, so that tidyverse packages can be easily used on the data. Default is "tidy".}
+\item{format}{Choose between "raw", "clean" and "tidy" format. The "raw" format returns the income statement as you see it on yahoo finance, and is the easiest to read. "clean" keeps the same format, but removes empty grouping rows, and converts missing data to NA and numbers to numeric. "tidy" makes every item a varaible and every yearly report an observation, so that tidyverse packages can be easily used on the data. Default is "tidy".}
 
 \item{assign}{Choose between TRUE or FALSE. If TRUE, function output dataframe is assigned as "ticker_income" to the environment. If FALSE, the function will only return the dataframe and it's up to the user to save it under a name. Default is TRUE.}
 }

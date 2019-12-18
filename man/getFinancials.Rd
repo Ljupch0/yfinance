@@ -9,7 +9,7 @@ getFinancials(ticker, assign = TRUE)
 \arguments{
 \item{ticker}{The stock ticker of the company as a string, or a vector of stock tickers as strings.}
 
-\item{assign}{Choose between TRUE or FALSE. If TRUE, function output dataframe is assigned as "financials" to the environment. If FALSE, the function will only return the dataframe and it's up to the user to save it under a name. FALSE is advised when getting financial data for several sets of companies, as data will be overwritten when TRUE. Default is TRUE.}
+\item{assign}{Choose between TRUE or FALSE. If TRUE, the output dataframe is assigned as "financials" to the environment. If FALSE, the function will only return the dataframe and it's up to the user to save it under a name. FALSE is advised when running getFinancials several times, as the previous output dataframes will be overwritten when assign=TRUE. Default is TRUE.}
 }
 \value{
 A dataframe with all financial data from the last 4 yearly reports.
