@@ -2,3 +2,13 @@
 
 language: R
 cache: packages
+warnings_are_errors: true
+
+os:
+  -linux
+  -osx
+
+r:
+  -oldrel
+  -release
+  -devel
