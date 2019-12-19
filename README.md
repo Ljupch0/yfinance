@@ -42,8 +42,7 @@ defaut format.
 
 The resulting dataframes are by default assigned to the envirnoment with
 succint object names. However, by setting `assign = FALSE` the user is
-free to have only the results returned and assigned to the environment
-with a name of their choice.
+free to have only the results returned.
 
 **getFinancials** is the most general function, which can take a vector
 of tickers and returns a tidy dataframe containing all the income
