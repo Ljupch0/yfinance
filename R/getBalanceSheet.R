@@ -44,7 +44,7 @@ getBalanceSheet <- function (ticker, format="tidy", assign=TRUE) {
       }, silent = TRUE)}
 
     ifelse(is.null(df),
-           stop("After 3 attempts, no data was downloaded from yfinance. Either your ticker is wrong,   or you have been downloading a lot of data and yfinance is blocking you."),
+           stop("After 3 attempts, no data was downloaded from yfinance. Possible causes: wrong ticker, no internet connection, or yfinance temporary IP block due to excessive downloading."),
            return(df))
   }
 
