@@ -3,6 +3,8 @@
 
 # yfinance for R
 
+{yfinance} returns tidy Income Statement, Balance Sheet and Cash Flow data, using the yahoo finance API.
+
 ## Install
 
 You can install the released version of equityanalysis from
