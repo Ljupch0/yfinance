@@ -9,17 +9,14 @@
 status](https://travis-ci.org/Ljupch0/equityanalysis.svg?branch=master)](https://travis-ci.org/Ljupch0/equityanalysis)
 <!-- badges: end -->
 
-The equityanalysis package simplifies the download and analysis of
-financial statement data. The data source is yahoo finance.
-
 ## Installation
 
 You can install the released version of equityanalysis from
-[Github](https://github.com/Ljupch0/equityanalysis) with:
+[Github](https://github.com/Ljupch0/yfinance) with:
 
 ``` r
-remotes::install_github("ljupch0/equityanalysis")
-library(equityanalysis)
+remotes::install_github("ljupch0/yfinance")
+library(yfinance)
 ```
 
 ## Quick Introduction
