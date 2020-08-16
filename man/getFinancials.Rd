@@ -2,22 +2,24 @@
 % Please edit documentation in R/getFinancials.R
 \name{getFinancials}
 \alias{getFinancials}
-\title{Get Financial Statements}
+\title{getFinancials}
 \usage{
-getFinancials(ticker, assign = TRUE)
+getFinancials(ticker, report_type = "annual")
 }
 \arguments{
-\item{ticker}{The stock ticker of the company as a string, or a vector of stock tickers as strings.}
+\item{ticker}{A character vector of stock tickers. Ex. ticker = c("AAPL", "MSFT")}
 
-\item{assign}{Choose between TRUE or FALSE. If TRUE, the output dataframe is assigned as "financials" to the environment. If FALSE, the function will only return the dataframe and it's up to the user to save it under a name. FALSE is advised when running getFinancials several times, as the previous output dataframes will be overwritten when assign=TRUE. Default is TRUE.}
+\item{report_type}{Accepts "quarterly" or "annual". Default is "annual". Both return 4 intervals.}
 }
 \value{
-A dataframe with all financial data from the last 4 yearly reports.
+Dataframe
 }
 \description{
-Returns a single tidy dataframe with historical data from the income statement, balance sheet, and cash flow statement.
+A single tidy dataframe of income statement, balance sheet, and cash flow data.
 }
 \examples{
 getFinancials("AAPL")
-getFinancials(c("AAPL", "MSFT"), assign=FALSE)
+
+getFinancials(c("AAPL", "MSFT"), report_type = "quarterly")
+
 }
