@@ -4,6 +4,8 @@
 #' @param proto_function A function that needs to run safely and not stop at errors.
 #' @param report_type Either "quarterly" or "annual", depending whether the proto function accepts such an argument.
 #'
+#' @import crayon
+#'
 #' @return Dataframe with errors as attributes.
 safe_download <- function(ticker, report_type, proto_function) {
   safe_function <- purrr::safely(proto_function)

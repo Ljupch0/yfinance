@@ -17,6 +17,7 @@
 getPrice <- function(ticker) {
   pb <- progress_bar(datatype = "Prices", ticker = ticker)
   getPrice_proto <- function(ticker, ...) {
+    pb$tick(tokens = list(what = ticker))
     jsonlite::flatten(
       jsonlite::fromJSON(
         glue::glue("https://query2.finance.yahoo.com/v10/finance/quoteSummary/{ticker}?modules=price")
