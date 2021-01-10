@@ -1,4 +1,4 @@
-#' getSummaries
+#' get_summaries
 #'
 #' @param ticker A character vector of stock tickers. Ex. ticker = c("AAPL", "MSFT")
 #'

@@ -1,4 +1,4 @@
-#' getCF
+#' get_cf
 #'
 #' A tidy dataframe of cash flow data.
 #'
@@ -12,9 +12,9 @@
 #' @export
 #'
 #' @examples
-#' getCF("AAPL")
+#' get_cf("AAPL")
 #'
-#' getCF(c("AAPL", "MSFT"), report_type = "quarterly")
+#' get_cf(c("AAPL", "MSFT"), report_type = "quarterly")
 
 get_cf <- function(ticker, report_type="annual") {
   pb <- progress_bar(datatype = "Cash Flow", ticker = ticker)

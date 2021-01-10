@@ -1,4 +1,4 @@
-#' getIncome
+#' get_income
 #'
 #' A tidy dataframe of income statement data.
 #'
@@ -13,9 +13,9 @@
 #' @export
 #'
 #' @examples
-#' getIncome("AAPL")
+#' get_income("AAPL")
 #'
-#' getIncome(c("AAPL", "MSFT"), report_type = "quarterly")
+#' get_income(c("AAPL", "MSFT"), report_type = "quarterly")
 
 
 

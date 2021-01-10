@@ -1,4 +1,4 @@
-#' getFinancials
+#' get_financials
 #'
 #' A single tidy dataframe of income statement, balance sheet, and cash flow data.
 #'
@@ -12,9 +12,9 @@
 #' @export
 #'
 #' @examples
-#' getFinancials("AAPL")
+#' get_financials("AAPL")
 #'
-#' getFinancials(c("AAPL", "MSFT"), report_type = "quarterly")
+#' get_financials(c("AAPL", "MSFT"), report_type = "quarterly")
 #'
 get_financials <- function (ticker, report_type="annual") {
   ticker <- base::toupper(ticker)

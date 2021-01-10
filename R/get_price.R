@@ -1,4 +1,4 @@
-#' getPrice
+#' get_price
 #'
 #' Returns price, market cap and other similar data.
 #'
@@ -11,8 +11,8 @@
 #'
 #' @examples
 #'
-#' getPrice("MSFT")
-#' getPrice(c("AAPL", "GOOG"))
+#' get_price("MSFT")
+#' get_price(c("AAPL", "GOOG"))
 
 get_price <- function(ticker) {
   pb <- progress_bar(datatype = "Prices", ticker = ticker)

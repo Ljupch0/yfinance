@@ -1,4 +1,4 @@
-#' getBS
+#' get_bs
 #'
 #' A tidy dataframe of balance sheet data.
 #'
@@ -13,9 +13,9 @@
 #' @export
 #'
 #' @examples
-#' getBS("AAPL")
+#' get_bs("AAPL")
 #'
-#' getBS(c("AAPL", "MSFT"), report_type = "quarterly")
+#' get_bs(c("AAPL", "MSFT"), report_type = "quarterly")
 
 get_bs <- function(ticker, report_type="annual") {
   pb <- progress_bar(datatype = "Balance Sheets", ticker)
