@@ -6,7 +6,7 @@
 #' @param report_type Accepts "quarterly" or "annual". Default is "annual". Both return 4 intervals.
 #'
 #' @import dplyr
-#' @importFrom purrr map2
+#' @import purrr
 #'
 #'
 #' @return Dataframe
@@ -20,7 +20,9 @@
 
 
 getIncome <- function(ticker, report_type="annual") {
+  pb <- progress_bar(datatype = "Income Statements", ticker=ticker)
   getIncome_proto <- function(ticker, report_type) {
+    pb$tick(tokens = list(what = ticker))
     baseURL <- "https://query2.finance.yahoo.com/v10/finance/quoteSummary/"
     incomeURL <- ifelse(report_type=="quarterly",
                         paste0(baseURL, ticker, "?modules=", "incomeStatementHistoryQuarterly"),
@@ -38,7 +40,7 @@ getIncome <- function(ticker, report_type="annual") {
         ticker, date, everything()
       )
   }
-  m <- map2( ticker, report_type, getIncome_proto)
-  bind_rows(m)
+
+  safe_download(ticker = ticker, report_type = report_type, proto_function = getIncome_proto)
 
 }

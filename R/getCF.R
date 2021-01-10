@@ -17,7 +17,9 @@
 #' getCF(c("AAPL", "MSFT"), report_type = "quarterly")
 
 getCF <- function(ticker, report_type="annual") {
+  pb <- progress_bar(datatype = "Cash Flow", ticker = ticker)
   getCF_proto <- function(ticker, report_type) {
+    pb$tick(tokens = list(what = ticker))
     baseURL <- "https://query2.finance.yahoo.com/v10/finance/quoteSummary/"
     cfURL <- ifelse(report_type=="quarterly",
                     paste0(baseURL, ticker, "?modules=", "cashflowStatementHistoryQuarterly"),
@@ -36,6 +38,5 @@ getCF <- function(ticker, report_type="annual") {
         ticker, date, everything()
       )
   }
-  m <- map2( ticker, report_type, getCF_proto)
-  bind_rows(m)
+  safe_download(ticker = ticker, report_type = report_type, proto_function = getCF_proto)
 }

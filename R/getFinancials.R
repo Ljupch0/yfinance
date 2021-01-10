@@ -8,6 +8,7 @@
 #' @import dplyr
 #'
 #' @return Dataframe
+#'
 #' @export
 #'
 #' @examples
