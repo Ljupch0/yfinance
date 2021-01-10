@@ -9,10 +9,10 @@
 #' @export
 
 
-getSummaries <- function(ticker) {
+get_summaries <- function(ticker) {
   pb <- progress_bar(datatype = "Summaries", ticker = ticker)
 
-  get_asset_summaries_proto <- function(ticker, ...) {
+  get_summaries_proto <- function(ticker, ...) {
     pb$tick(tokens = list(what = ticker))
     data <- jsonlite::flatten(jsonlite::fromJSON(glue::glue("https://query2.finance.yahoo.com/v10/finance/quoteSummary/{ticker}?modules=summaryProfile"))[[1]][[1]][[1]]) %>%
       mutate(
@@ -22,7 +22,7 @@ getSummaries <- function(ticker) {
       select(ticker, everything())
   }
 
-  safe_download(ticker = ticker, proto_function = get_asset_summaries_proto)
+  safe_download(ticker = ticker, proto_function = get_summaries_proto)
 
 }
 

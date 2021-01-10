@@ -19,9 +19,9 @@
 
 
 
-getIncome <- function(ticker, report_type="annual") {
+get_income <- function(ticker, report_type="annual") {
   pb <- progress_bar(datatype = "Income Statements", ticker=ticker)
-  getIncome_proto <- function(ticker, report_type) {
+  get_income_proto <- function(ticker, report_type) {
     pb$tick(tokens = list(what = ticker))
     baseURL <- "https://query2.finance.yahoo.com/v10/finance/quoteSummary/"
     incomeURL <- ifelse(report_type=="quarterly",
@@ -41,6 +41,6 @@ getIncome <- function(ticker, report_type="annual") {
       )
   }
 
-  safe_download(ticker = ticker, report_type = report_type, proto_function = getIncome_proto)
+  safe_download(ticker = ticker, report_type = report_type, proto_function = get_income_proto)
 
 }

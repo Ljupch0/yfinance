@@ -14,9 +14,9 @@
 #' getPrice("MSFT")
 #' getPrice(c("AAPL", "GOOG"))
 
-getPrice <- function(ticker) {
+get_price <- function(ticker) {
   pb <- progress_bar(datatype = "Prices", ticker = ticker)
-  getPrice_proto <- function(ticker, ...) {
+  get_price_proto <- function(ticker, ...) {
     pb$tick(tokens = list(what = ticker))
     jsonlite::flatten(
       jsonlite::fromJSON(
@@ -31,5 +31,5 @@ getPrice <- function(ticker) {
       ) %>%
       select(ticker, date, everything())
   }
-  safe_download(ticker = ticker, proto_function = getPrice_proto)
+  safe_download(ticker = ticker, proto_function = get_price_proto)
 }

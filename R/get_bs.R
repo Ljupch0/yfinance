@@ -17,9 +17,9 @@
 #'
 #' getBS(c("AAPL", "MSFT"), report_type = "quarterly")
 
-getBS <- function(ticker, report_type="annual") {
+get_bs <- function(ticker, report_type="annual") {
   pb <- progress_bar(datatype = "Balance Sheets", ticker)
-  getBS_proto <- function(ticker, report_type) {
+  get_bs_proto <- function(ticker, report_type) {
     pb$tick(tokens = list(what = ticker))
     baseURL <- "https://query2.finance.yahoo.com/v10/finance/quoteSummary/"
     bsURL <- ifelse(report_type=="quarterly",
@@ -38,6 +38,6 @@ getBS <- function(ticker, report_type="annual") {
         ticker, date, everything()
       )
   }
-  safe_download(ticker = ticker, report_type = report_type, proto_function = getBS_proto)
+  safe_download(ticker = ticker, report_type = report_type, proto_function = get_bs_proto)
 
 }

@@ -16,11 +16,11 @@
 #'
 #' getFinancials(c("AAPL", "MSFT"), report_type = "quarterly")
 #'
-getFinancials <- function (ticker, report_type="annual") {
+get_financials <- function (ticker, report_type="annual") {
   ticker <- base::toupper(ticker)
-  BS <- getBS(ticker, report_type)
-  CF <- getCF(ticker, report_type)
-  Income <- getIncome(ticker, report_type)
+  BS <- get_bs(ticker, report_type)
+  CF <- get_cf(ticker, report_type)
+  Income <- get_income(ticker, report_type)
 
   a <- dplyr::full_join(BS, CF)
   b <- dplyr::full_join(a, Income)
