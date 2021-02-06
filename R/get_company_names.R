@@ -1,6 +1,8 @@
 #' get_company_names
 #'
-#' @param ticker The vector of tickers to get the Company names of.
+#' Given a vector of tickers, returns a vector of company names.
+#'
+#' @param ticker A vector of stock tickers. Ex. c("MSFT", "AAPL")
 #'
 #' @return
 #' @export
