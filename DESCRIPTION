@@ -18,5 +18,4 @@ Imports:
     curl,
     tibble,
     progress,
-    glue,
-    crayon
+    glue

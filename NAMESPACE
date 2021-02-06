@@ -2,6 +2,7 @@
 
 export(get_bs)
 export(get_cf)
+export(get_company_names)
 export(get_financials)
 export(get_income)
 export(get_price)
