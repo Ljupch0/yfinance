@@ -21,5 +21,6 @@ get_company_names <- function(ticker) {
     if (is.null(name)) NA else name
   }
   map_chr(ticker, get_company_names_proto)
+
 }
 

@@ -38,6 +38,6 @@ get_bs <- function(ticker, report_type="annual") {
         ticker, date, everything()
       )
   }
-  safe_download(ticker = ticker, report_type = report_type, proto_function = get_bs_proto)
+  safe_download(vector = ticker, report_type = report_type, proto_function = get_bs_proto)
 
 }

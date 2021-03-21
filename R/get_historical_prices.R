@@ -15,5 +15,5 @@ get_historical_price <- function(ticker) {
       ) %>%
       select(ticker, date, everything())
   }
-  safe_download(ticker = ticker, proto_function = get_price_proto)
+  safe_download(vector = ticker, proto_function = get_price_proto)
 }

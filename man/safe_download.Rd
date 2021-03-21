@@ -4,14 +4,14 @@
 \alias{safe_download}
 \title{safe_download}
 \usage{
-safe_download(ticker, report_type, proto_function)
+safe_download(vector, proto_function, ...)
 }
 \arguments{
-\item{ticker}{A character vector of stock tickers. Ex. ticker = c("AAPL", "MSFT")}
-
-\item{report_type}{Either "quarterly" or "annual", depending whether the proto function accepts such an argument.}
+\item{vector}{A vector of things to be iterated over. Ex. ticker = c("AAPL", "MSFT")}
 
 \item{proto_function}{A function that needs to run safely and not stop at errors.}
+
+\item{...}{Any other parameters that the proto_function accepts.}
 }
 \value{
 Dataframe with errors as attributes.
