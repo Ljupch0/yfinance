@@ -22,7 +22,7 @@ get_summaries <- function(ticker) {
       select(ticker, everything())
   }
 
-  safe_download(ticker = ticker, proto_function = get_summaries_proto)
+  safe_download(vector = ticker, proto_function = get_summaries_proto)
 
 }
 
