@@ -4,14 +4,20 @@
 \alias{search_stock}
 \title{search_stock}
 \usage{
-search_stock(search_term)
+search_stock(search_term, keep_results = "all")
 }
 \arguments{
 \item{search_term}{The name, cusip code or stock ticker of a security.}
+
+\item{keep_results}{Set "top" for the first result per search, or "all" for all search results.}
 }
 \value{
-Search results of securities matching the query. Available data: exchange, shortname, ticker symbol, security type and more.
+Search results of securities matching the query. Available data: exchange name, shortname, ticker symbol, security type and more.
 }
 \description{
 search_stock
+}
+\examples{
+search_stock("Nike", keep_results = "top")
+search_stock(c("Nike", "adidas"), keep_results = "top")
 }

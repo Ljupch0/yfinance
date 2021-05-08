@@ -31,25 +31,33 @@ safe_download <- function(vector, proto_function, ...) {
   data
 }
 
-#safe_download <- function(ticker, report_type, proto_function) {
-#  safe_function <- purrr::safely(proto_function)
-#
-#  download <- purrr::transpose(
-#    purrr::map(.x = ticker,
-#               .f = ~ safe_function(ticker = .x, report_type = report_type)
-#    ) )
-#
-#  data <- bind_rows(download$result)
-#  error_tickers <- ticker[!purrr::map_lgl(download$error, is.null)]
-#  error_messages <- paste0( error_tickers, ": ", unlist(map(.x = download$error, 1)))
-#
-#
-#
-#  if (length(error_tickers) != 0) {
-#    warning(glue::glue("There were ERRORS while downloading data for these tickers: {paste(error_tickers, collapse = ', ')}.
-#                       Please check if you have the correct ticker. The vector of errored tickers and error messages can be accessed as attributes of the returned dataframe - attributes(df)."))
-#  }
-#  attr(data, "error_tickers") <- error_tickers
-#  attr(data, "error_messages") <- error_messages
-#  data
-#}
+
+
+#' progress_bar
+#'
+#' @param ticker  A character vector of stock tickers. Ex. ticker = c("AAPL", "MSFT")
+#' @param datatype The type of data that is accessed.
+#'
+#' @return Progress Bar.
+progress_bar <- function(datatype, ticker) {
+  progress::progress_bar$new(
+    format = glue::glue("  Downloading {datatype} :what [:bar] :percent ETA: :eta"),
+    total = length(ticker)
+  )
+}
+
+
+
+#' json2tidy
+#'
+#' @param url The yahoo finance URL to tidy.
+#' @importFrom jsonlite fromJSON flatten
+#' @importFrom curl curl
+#' @import dplyr
+
+json2tidy <- function (url) {
+  json <- jsonlite::fromJSON(url)
+  df <- jsonlite::flatten(json[[1]][[1]][[1]][[1,1]])
+}
+
+
