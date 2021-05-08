@@ -18,14 +18,18 @@ search_stock <- function(search_term, keep_results = "all") {
     pb$tick(tokens = list(what = search_term))
     search_term_url <- stringr::str_replace_all(search_term, " ", "%20")
     url <- glue::glue("https://query2.finance.yahoo.com/v1/finance/search?q={search_term_url}")
-    results <- jsonlite::fromJSON(url)$quotes %>%
+    results <- jsonlite::fromJSON(url)$quotes
+
+    if (length(results)==0) stop(glue::glue("Your search term '{search_term}' returned 0 results. Try making your search query shorter."))
+
+    output <- results %>%
       mutate(search_term = search_term) %>%
       relocate(search_term)
 
     if (keep_results == "top") {
-      results %>% slice(1)
+      output %>% slice(1)
     } else {
-      results
+      output
     }
 
   }
