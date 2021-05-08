@@ -17,8 +17,8 @@ library(yfinance)
 
 ## Quick Introduction
 
-The functions **getIncome**, **getBS** and **getCF** return a tidy dataframe of financial statement data for a vector of tickers.
-**getFinancials** combines all three functions and returns all data for the requested tickers.
+The functions **get_income**, **get_bs** and **get_cf** return a tidy dataframe of financial statement data for a vector of tickers.
+**get_financials** combines all three functions and returns all data for the requested tickers.
 
 The functions take in 2 arguments.  
 `ticker` accepts a vector of stock tickers like `c("AAPL", "MSFT", "GOOG")`.  
