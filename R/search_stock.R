@@ -1,6 +1,8 @@
 #' search_stock
 #'
-#' @param search_term The name, cusip code or stock ticker of a security.
+#' Search for stocks and securities using company names, isin and cusip codes or tickers. Useful to get the exact tickers yahoo finance uses in order to query other financial data.
+#'
+#' @param search_term The name, cusip code, isin code or stock ticker of a security.
 #' @param keep_results Set "top" for the first result per search, or "all" for all search results.
 #'
 #'
@@ -8,10 +10,12 @@
 #' @export
 #'
 #' @examples
-#' search_stock("Nike", keep_results = "top")
+#' search_stock("Nike", keep_results = "all")
 #' search_stock(c("Nike", "adidas"), keep_results = "top")
+#' search_stock(search_term = "US4581401001", keep_results = "top")
+#' search_stock(search_term = "594918104", keep_results = "top")
 search_stock <- function(search_term, keep_results = "all") {
-  pb <- progress_bar(datatype = "Searching", search_term)
+  pb <- progress_bar(action = "Searching", datatype = "term", search_term)
 
 
   search_stock_proto <- function(search_term) {

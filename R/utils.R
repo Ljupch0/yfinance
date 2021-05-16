@@ -39,9 +39,9 @@ safe_download <- function(vector, proto_function, ...) {
 #' @param datatype The type of data that is accessed.
 #'
 #' @return Progress Bar.
-progress_bar <- function(datatype, ticker) {
+progress_bar <- function(datatype, ticker, action = "Downloading") {
   progress::progress_bar$new(
-    format = glue::glue("  Downloading {datatype} :what [:bar] :percent ETA: :eta"),
+    format = glue::glue("  {action} {datatype} :what [:bar] :percent ETA: :eta"),
     total = length(ticker)
   )
 }
