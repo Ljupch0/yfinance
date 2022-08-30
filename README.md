@@ -3,17 +3,20 @@
 
 # yfinance for R
 
-{yfinance} returns tidy Income Statement, Balance Sheet and Cash Flow data, using the yahoo finance API.
+{yfinance} returns tidy financial data using the yahoo finance API.
 
 ## Install
 
-You can install the released version of equityanalysis from
+You can install the released version of yfinance from
 [Github](https://github.com/Ljupch0/yfinance) with:
 
 ``` r
 remotes::install_github("ljupch0/yfinance")
 library(yfinance)
 ```
+
+## Video Tutorial
+[![yfinance - Tidy Financial Data in R](http://img.youtube.com/vi/qHFwzY2FXiI/0.jpg)](http://www.youtube.com/watch?v=qHFwzY2FXiI "yfinance - Tidy Financial Data in R")
 
 ## Quick Introduction
 
