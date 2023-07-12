@@ -3,7 +3,7 @@
 
 # yfinance for R
 
-{yfinance} returns tidy financial data using the yahoo finance API.
+yfinance returns tidy financial data using the yahoo finance API.
 
 ## Install
 
